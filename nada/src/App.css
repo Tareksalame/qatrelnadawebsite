@@ -1,0 +1,578 @@
+.App {
+  text-align: center; 
+  background-color: black;
+}
+body{
+  background-color: black;
+}
+
+:root
+{
+  --kufam-Font: 'Kufam', sans-serif;
+  --lemonada-Font : 'Lemonada', sans-serif;
+  --body-color : #ecf0f1;
+  --body-text-color : #34495e;
+  --header-background : #3498db;
+  --header-text-color : #fff;
+  --button-background : #e74c3c;
+  --button-text-color : #fff;
+  --green-color : #2ecc71;
+  --highlight-color : #e74c3c;
+}
+.hidden
+{
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(5px);
+    transform: translateX(50%);
+}
+.show
+{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0%);
+
+}
+/* _____________________________________HomePage________________________________________ */
+.HomePage
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: var(--kufam-Font);
+}
+.HomePageFlayers
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 5%;
+}
+.HomePageFlayers img
+{
+  width: 90%;
+  border-radius: 30px;
+  padding: 10px;
+  border: 3px solid black;
+}
+/* Header */
+.Header
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-family: var(--kufam-Font);
+  background-color: rgb(0, 0, 0);
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.HeaderDivs
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.cartImg
+{
+  height: 40px;
+  width: 40px;
+}
+.menuImg
+{
+  height: 40px;
+  width: 40px;
+}
+/* menu______________________________________________ */
+#menu
+{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 0px;
+  height: 100%;
+  background-color: black;
+  padding-top: 5%;
+
+}
+.closeMenuDiv
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.LinksDiv
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.MenuLinks
+{
+  font-family: var(--kufam-Font);
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+}
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    height: 0%;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+    transform: translateX(0);
+  }
+}
+.MenuLinksChildrenDiv
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  /* transition: all 2s; */
+  animation: slideInFromLeft 3s;
+}
+.MenuLinksChildren
+{
+  font-size: 18px;
+  text-decoration: none;
+  color: wheat;
+  font-family: var(--kufam-Font);
+  margin-bottom: 10px;
+
+}
+.contactUsAndLocationMenuLinks
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+  margin-bottom: 20%;
+  
+}
+.contactUsAndLocationMenuLinks div
+{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contactUsAndLocationMenuLinks h5
+{
+  color: white;
+  font-size: 20px;
+  margin: 0px;
+  font-family: var(--kufam-Font);
+}
+/* ___________________________AlternativeMen__________________________________ */
+.AlternativeMen
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--kufam-Font);
+  color: wheat;
+}
+/* AlternativePerfumeComponent____________________________-------------------__________________ */
+.AlternativePerfumeComponent
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--kufam-Font);
+  text-align: center;
+  border: 3px solid rgb(120, 78, 0);
+  margin: 10px;
+  padding: 10px;
+  border-radius:10px ;
+}
+.AlternativePerfumeComponentImagesChoose img
+{
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+}
+.AlternativePerfumeComponentImages img
+{
+
+  width: 120px;
+  height: 120px;
+}
+.AlternativePerfumeComponent h3
+{
+  font-size: 15px;
+  margin: 6px;
+}
+.AlternativePerfumeComponent h4
+{
+  margin: 0px;
+}
+
+.AlternativePerfumeComponentContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.AlternativePerfumeComponentMoreButton
+{
+  width: 80%;
+  height: 40px;
+  font-size: 18px;
+  font-family: var(--kufam-Font);
+  color: wheat;
+  background-color: darkred;
+  border: 3px solid darkred;
+  border-radius: 8px;
+}
+/* __________-----------________------_____------___ProductComponent________----___---_--_--_--__--_--_--__ */
+.ProductComponent
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.ProductsDiv
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  font-family: var(--kufam-Font);
+
+}
+.ProductHeadImageDiv
+{
+  display:flex ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+.ProductHeadImageDiv img
+{
+  width: 300px;
+  height: 300px;
+}
+.ProductHeadImageSelectDiv
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 10%;
+}
+.ProductHeadImageSelectDiv img{
+  width: 100px;
+  height: 100px;
+}
+.PlusMinusDiv
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+
+}
+.PlusMinusDiv button
+{
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  color: wheat;
+  font-size: 50px;
+  border-radius: 50px;
+  font-weight: 900;
+  font-family: var(--kufam-Font);
+}
+.AddToCartButton
+{
+  background-color: darkred;
+  color: wheat;
+  width: 70%;
+  height: 50px;
+  font-family: var(--kufam-Font);
+  font-size: 25px;
+  border: 3px solid darkred;
+  border-radius: 8px;
+  padding: 8px;
+}
+/* ____________------______----__-___------CartProductName______----__________------__--__-_--___- */
+.CartComponent
+{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  width: 85%;
+  margin-top: 5%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+}
+.CartPageTitle
+{
+  font-family: var(--kufam-Font);
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+}
+.CartComponentImage
+{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.CartComponentImage img
+{
+  width: 100%;
+}
+.CartComponentPrice
+{
+  width: 20%;
+  font-size: 10px;
+  font-family: var(--kufam-Font);
+}
+
+.CartProductName
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  width: 50%;
+  font-family: var(--kufam-Font);
+}
+.PlusMinusCartDiv
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--kufam-Font);
+  width: 50%;
+}
+.PlusMinusCartDiv h1
+{
+  font-size: 15px;
+  color: black;
+
+}
+.PlusMinusCartDiv button
+{
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  width:  25px;
+  height: 25px;
+  border: 3px solid black;
+  border-radius: 50px;
+}
+.goToCheckout
+{
+  width: 70%;
+  height: 50px;
+  padding: 8px;
+  font-size: 25px;
+  background-color: wheat;
+  font-family: var(--kufam-Font);
+  font-weight: 700;
+  border-radius: 8px;
+  color: darkred;
+  position:static;
+  bottom: 10%;
+}
+/* _____________-----______--___-__-__-____CheckOutPage_______---------_--____-_-________ */
+.CheckOutPage
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.InformationsDiv
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding-bottom: 5%;
+}
+.InformationsDiv h1
+{
+  align-self: last baseline;
+  color: white;
+  font-family: var(--kufam-Font);
+  font-size: medium;
+  margin-right: 2%;
+  margin-top: 5%;
+  
+}
+/* .InformationsDiv input
+{
+  width: 70%;
+  margin-top: 5%;
+  height: 40px;
+  border-radius:8px ;
+  padding: 8px;
+  font-size: 20px;
+  border: 3px solid white;
+  font-family: var(--kufam-Font);
+  text-align: right;
+  font-weight: 700;
+} */
+.FirstNameLastName
+{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-family: var(--kufam-Font);
+}
+.informationsLabel
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+.informationsLabel input
+{
+  width: 80%;
+  text-align: right;
+  height: 40px;
+  border-radius:8px ;
+  padding: 8px;
+  font-size: 15px;
+  border: 3px solid white;
+  font-family: var(--kufam-Font);
+  text-align: right;
+  font-weight: 700;
+}
+.informationsLabel h4
+{
+  align-self:last baseline;
+  color: white;
+  margin-bottom: 0px;
+  margin-right: 5%;
+}
+.informationsLabel span
+{
+  color: red;
+}
+.theRemainingInformations
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.theRemainingInformations input
+{
+  width: 70%;
+  text-align: right;
+  height: 40px;
+  border-radius:8px ;
+  padding: 8px;
+  font-size: 15px;
+  border: 3px solid white;
+  font-family: var(--kufam-Font);
+  text-align: right;
+  font-weight: 700;
+}
+.theRemainingInformationsLabel
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  width: 100%;
+  font-family: var(--kufam-Font);
+}
+.theRemainingInformationsLabel span
+{
+  color: red;
+
+}
+.theRemainingInformationsLabel h4
+{
+  align-self:last baseline;
+  color: white;
+  margin-bottom: 0px;
+  margin-right: 12%;
+
+}
+.SendInformationsButton
+{
+  width: 60%;
+  margin-top: 10%;
+  height: 45px;
+  font-size: 20px;
+  font-family: var(--kufam-Font);
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 600;
+  background-color: wheat;
+  border: 1px solid wheat;
+  color: darkred;
+
+}
+#takeAwayOrShipping
+{
+  width: 60%;
+  height: 45px;
+  text-align: right;
+  font-size: 18px;
+  font-family: var(--kufam-Font);
+  padding: 8px;
+  border-radius: 8px;
+  color: wheat;
+  background-color: darkred;
+  border: 1px solid darkred;
+}
+
