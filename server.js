@@ -151,6 +151,115 @@ function sendToTheCostumer(arr) {
 
 
 
+  function sendToTheManager(arr) {
+    // Constructing the HTML content for the email
+    const emailContent = `
+        <div style="text-align: center; border:1px solid #ccc; border-radius:10px;">
+            <img src="https://nada-532bf3415b41.herokuapp.com/static/media/qatrelnada.0e5f6b3698134f8eea016fa547bb69fd.svg" alt="Shop Logo" style="max-width: 200px; margin-bottom: 20px;">
+            <h2>!شكرًا على طلبك من قطر الندى</h2>
+            <p>رقم الطلب: <span style:"font-wight:900;">${arr.orderNumber}</span></p>
+            <h2>معلومات المشتري</h2>
+            <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse; border: 1px solid #ccc;">
+                    <thead>
+                        <tr>
+                        <td style="padding: 10px;">${arr.firstName} ${arr.lastName}</td>
+                            <th style="padding: 10px;">الإسم</th>
+                        </tr>
+                        <tr>
+                        <td style="padding: 10px;">${arr.house} ${arr.city} ${arr.street}</td>
+                            <th style="padding: 10px;">العنوان</th>
+                        </tr>
+                        <tr>
+                        <td style="padding: 10px;">${arr.phoneNumber}</td>
+                        <th style="padding: 10px;">رقم الهاتف</th>
+
+                        </tr>
+                    </thead>
+                </table>
+            <h3>:تفاصيل الطلب</h3>
+            <div style="text-align: center; margin: 0 auto; width: 80%;">
+            <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse; border: 1px solid #ccc;">
+                <thead>
+                    <tr>
+                    <th style="padding: 10px; border-bottom: 1px solid #ccc;">سعر الكميّة</th>
+                    <th style="padding: 10px; border-bottom: 1px solid #ccc;">سعر الوحدة</th>
+                    <th style="padding: 10px; border-bottom: 1px solid #ccc;">الكميّة</th>
+                    <th style="padding: 10px; border-bottom: 1px solid #ccc;">رقم العطر البديل</th>
+                    <th style="padding: 10px; border-bottom: 1px solid #ccc;">اسم المنتج</th>
+                    <th style="padding: 10px; border-bottom: 1px solid #ccc;">صورة المنتج</th>
+                    </tr>
+                </thead>
+    ${arr.cart.map((item) => { 
+        if (item.product.replace) {
+            return `
+                    <tbody>
+                        <tr>
+                        <td style="padding: 10px;">${item.product.price * item.quantity}</td>
+                        <td style="padding: 10px;">${item.product.price}</td>
+                        <td style="padding: 10px;">${item.quantity}</td>
+                        <td style="padding: 10px;">${item.product.replace}</td>
+                        <td style="padding: 10px;">${item.product.real}</td>
+                        <td style="padding: 10px;"><img src="https://nada-532bf3415b41.herokuapp.com/${item.product.womenImg}" alt="Item" style="max-width: 60px;"></td>
+                        </tr>
+                    </tbody>
+            `;
+        } else {
+            return `
+                    <tbody>
+                        <tr>
+                        <td style="padding: 10px;">${item.product.price * item.quantity}</td>
+                        <td style="padding: 10px;">${item.product.price}</td>
+                        <td style="padding: 10px;">${item.quantity}</td>
+                        <td style="padding: 10px;">X</td>
+                        <td style="padding: 10px;">${item.product.real}</td>
+                        <td style="padding: 10px;"><img src="https://nada-532bf3415b41.herokuapp.com/${item.product.image}" alt="Item" style="max-width: 60px;"></td>
+                        </tr>
+                    </tbody>
+            `;
+        }
+    }).join('')}
+    </table>
+</div>
+
+                <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse; border: 1px solid #ccc;">
+                    <thead>
+                        <tr>
+                            <td style="padding: 10px; font-size:25px;">${arr.takeAwayOrShipping}</td>
+                            <th style="padding: 10px; font-size:25px;">طريقة التوصيل</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table style="background-color: #f1f3f7; width: 100%; margin-bottom: 20px; border-collapse: collapse; border: 1px solid #ccc;">
+                    <thead>
+                        <tr>
+                            <th style="padding: 10px; font-size:25px;">${arr.finalPrice}₪</th>
+                            <th style="padding: 10px; font-size:25px;"> السعر النهائي <br> <span style:"font-size:15px">(لا يشمل التوصيل)</span> </th>
+                        </tr>
+                    </thead>
+                </table>
+
+
+        </div>
+    `;
+
+    const mailOptions = {
+        from: 'miniuforu@gmail.com',
+        to: 'qatr.elnada.store@gmail.com',
+        subject: '  شكرًا على طلبيتك / ' + arr.orderNumber  + '#',
+        html:emailContent ,
+      };
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.log('Error sending email:', error);
+        } else {
+          console.log('Email sent:', info.response);
+        }
+      });
+      
+  }
+
+
+
 
 
 app.post('/BuyNow',async(req,res)=>
@@ -195,6 +304,7 @@ app.post('/BuyNow',async(req,res)=>
     if(temp !== null)
     {
         sendToTheCostumer(arr)
+        sendToTheManager(arr)
         res.json('done')
     }
     else
