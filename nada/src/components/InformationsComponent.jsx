@@ -132,7 +132,7 @@ export default function InformationsComponent() {
         <h4><span>*</span>طريقة التوصيل</h4>
         <select value={takeAwayOrShipping} onChange={(e)=>{setTakeAwayOrShipping(e.target.value)}} name="takeAwayOrShipping" id="takeAwayOrShipping">
             <option value="0">إختيار</option>
-            <option value="توصيل حتى المنزل">توصيل حتى باب المنزل</option>
+            <option value="توصيل حتى المنزل">توصيل حتى المنزل</option>
             <option value="الالتقاط من المتجر">الالتقاط من المتجر</option>
         </select>
         </label>
