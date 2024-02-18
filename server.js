@@ -150,12 +150,12 @@ function sendToTheCostumer(arr) {
   }
 
 
+  // <img src="https://nada-532bf3415b41.herokuapp.com/static/media/qatrelnada.0e5f6b3698134f8eea016fa547bb69fd.svg" alt="Shop Logo" style="max-width: 200px; margin-bottom: 20px;">
 
   function sendToTheManager(arr) {
     // Constructing the HTML content for the email
     const emailContent = `
         <div style="text-align: center; border:1px solid #ccc; border-radius:10px;">
-            <img src="https://nada-532bf3415b41.herokuapp.com/static/media/qatrelnada.0e5f6b3698134f8eea016fa547bb69fd.svg" alt="Shop Logo" style="max-width: 200px; margin-bottom: 20px;">
             <h2>!شكرًا على طلبك من قطر الندى</h2>
             <p>رقم الطلب: <span style:"font-wight:900;">${arr.orderNumber}</span></p>
             <h2>معلومات المشتري</h2>
