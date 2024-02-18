@@ -50,10 +50,10 @@ export default function ProductComponent() {
 
       <h3 style={{ color: 'wheat',margin:'0px' }}> {menList[PerfumeIndex].price}₪</h3>
       </div>
-      <div className='PlusMinusDiv'>
-      <button onClick={()=>{setTheQuantity(prev => prev + 1)}}>+</button>
-      <h1 style={{color:'wheat',margin:'0px'}}>{theQuantity}</h1>
-      <button onClick={()=>{if(theQuantity>0) setTheQuantity(prev => prev - 1)}}>-</button>
+      <div style={{marginBottom:'5%',marginTop:'5%'}} className='PlusMinusDiv'>
+        <button onClick={()=>{setTheQuantity(prev => prev + 1)}}>+</button>
+        <h1 style={{color:'wheat',margin:'0px'}}>{theQuantity}</h1>
+        <button onClick={()=>{if(theQuantity>0) setTheQuantity(prev => prev - 1)}}>-</button>
       </div>
       <button className='AddToCartButton' onClick={()=>{addtocart(menList[PerfumeIndex],theQuantity)}}>إضافة الى السلّة</button>
       </div>
@@ -80,7 +80,7 @@ export default function ProductComponent() {
 
       <h3 style={{ color: 'wheat',margin:'0px' }}> {womenList[PerfumeIndex].price}₪</h3>
       </div>
-      <div className='PlusMinusDiv'>
+      <div style={{marginBottom:'5%',marginTop:'5%'}} className='PlusMinusDiv'>
       <button onClick={()=>{setTheQuantity(prev => prev + 1)}}>+</button>
       <h1 style={{color:'wheat',margin:'0px'}}>{theQuantity}</h1>
       <button onClick={()=>{if(theQuantity>0) setTheQuantity(prev => prev - 1)}}>-</button>
@@ -106,7 +106,7 @@ export default function ProductComponent() {
 
       <h3 style={{ color: 'wheat',margin:'0px' }}> {kidsList[PerfumeIndex].price}₪</h3>
       </div>
-      <div className='PlusMinusDiv'>
+      <div style={{marginBottom:'5%',marginTop:'5%'}} className='PlusMinusDiv'>
       <button onClick={()=>{setTheQuantity(prev => prev + 1)}}>+</button>
       <h1 style={{color:'wheat',margin:'0px'}}>{theQuantity}</h1>
       <button onClick={()=>{if(theQuantity>0) setTheQuantity(prev => prev - 1)}}>-</button>
@@ -137,7 +137,7 @@ export default function ProductComponent() {
 
       <h3 style={{ color: 'wheat',margin:'0px' }}> {unisexList[PerfumeIndex].price}₪</h3>
       </div>
-      <div className='PlusMinusDiv'>
+      <div style={{marginBottom:'5%',marginTop:'5%'}} className='PlusMinusDiv'>
       <button onClick={()=>{setTheQuantity(prev => prev + 1)}}>+</button>
       <h1 style={{color:'wheat',margin:'0px'}}>{theQuantity}</h1>
       <button onClick={()=>{if(theQuantity>0) setTheQuantity(prev => prev - 1)}}>-</button>

@@ -2,12 +2,14 @@ import React ,{useContext} from 'react'
 import userContext from '../userContext'
 import store from '../store'
 import { clear } from '../actions'
+import { useNavigate } from 'react-router-dom'
 
 export default function InformationsComponent() {
     const{finalPrice,setFinalPrice,firstName,setFirstName,lastName,
         setLastName,email,setEmail,phoneNumber,setPhoneNumber,city,setCity,
         street,setStreet,house,setHouse,takeAwayOrShipping,setTakeAwayOrShipping
     ,orderNumber,setOrderNumber} = useContext(userContext)
+    const nav = useNavigate()
 
 
 
@@ -20,6 +22,10 @@ export default function InformationsComponent() {
             else if(email.indexOf('@') === -1)
             {
                 return alert('تأكد من ان بريدك  الاكتروني صحيح')
+            }
+            else if(phoneNumber.length !== 10)
+            {   
+                return alert('رقم الهاتف يجب ان يكون مكوّن من 10 أرقام')
             }
             else{
                 fetch('/BuyNow', 
@@ -38,7 +44,7 @@ export default function InformationsComponent() {
                         house:house,
                         orderNumber:orderNumber,
                         finalPrice:finalPrice,
-                        setTakeAwayOrShipping:setTakeAwayOrShipping,
+                        takeAwayOrShipping:takeAwayOrShipping,
                         cart:store.getState().cartReducer
                     })
                 }).then((res)=>{return res.json()})
@@ -57,6 +63,8 @@ export default function InformationsComponent() {
                     setOrderNumber(0)
                     setTakeAwayOrShipping('')
                     store.dispatch(clear())
+                    alert('شكرًا! تم استلام طلبيتك سيتم ارسال التفاصيل الى بريدك الالكتروني')
+                    nav('/')
                     // setName('')
                     // setPhoneNumber('')
                     // setCity('')
@@ -124,8 +132,8 @@ export default function InformationsComponent() {
         <h4><span>*</span>طريقة التوصيل</h4>
         <select value={takeAwayOrShipping} onChange={(e)=>{setTakeAwayOrShipping(e.target.value)}} name="takeAwayOrShipping" id="takeAwayOrShipping">
             <option value="0">إختيار</option>
-            <option value="Shipping">توصيل حتى باب المنزل</option>
-            <option value="TakeAway">الالتقاط من المتجر</option>
+            <option value="توصيل حتى المنزل">توصيل حتى باب المنزل</option>
+            <option value="الالتقاط من المتجر">الالتقاط من المتجر</option>
         </select>
         </label>
         <button className='SendInformationsButton' onClick={informationsDone}>إرسال</button>
