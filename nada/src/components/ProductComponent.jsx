@@ -6,7 +6,7 @@ import store from '../store';
 import {add }from '../actions'
 
 export default function ProductComponent() {
-  const {menList,womenList,kidsList,unisexList,PerfumeIndex,setPerfumeIndex,ListName,setListName,
+  const {menList,womenList,kidsList,unisexList,PerfumeIndex,ListName,
     womenFrench,menFrench} = useContext(userContext);
   const[display1,setDisplay1] = useState('flex')
   const[display2,setDisplay2] = useState('none')
@@ -36,12 +36,12 @@ export default function ProductComponent() {
         </h3>
         <h2 style={{color:'wheat',marginTop:'0px'}}>{menList[PerfumeIndex].real}</h2>
         <div className='ProductHeadImageDiv'>
-            <img loading='lazy' style={{display:display1}} src={menList[PerfumeIndex].image}  />
-            <img loading='lazy' style={{display:display2}} src={menList[PerfumeIndex].womenImg}  />
+            <img loading='lazy' alt='product' style={{display:display1}} src={menList[PerfumeIndex].image}  />
+            <img loading='lazy' alt='product' style={{display:display2}} src={menList[PerfumeIndex].womenImg}  />
           </div>
           <div className='ProductHeadImageSelectDiv'>
-            <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} src={menList[PerfumeIndex].image}  />
-            <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} src={menList[PerfumeIndex].womenImg}  />
+            <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} alt='product' src={menList[PerfumeIndex].image}  />
+            <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} alt='product' src={menList[PerfumeIndex].womenImg}  />
           </div>
 <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'100%',marginTop:'10%'}}>
       <h3 style={{color:'wheat',margin:'0px'}}>
@@ -66,12 +66,12 @@ export default function ProductComponent() {
         </h3>
         <h2 style={{color:'wheat',marginTop:'0px'}}>{womenList[PerfumeIndex].real}</h2>
       <div className='ProductHeadImageDiv'>
-          <img loading='lazy' style={{display:display1}} src={womenList[PerfumeIndex].image}  />
-          <img loading='lazy' style={{display:display2}} src={womenList[PerfumeIndex].womenImg}  />
+          <img loading='lazy' style={{display:display1}} alt='product' src={womenList[PerfumeIndex].image}  />
+          <img loading='lazy' style={{display:display2}} alt='product' src={womenList[PerfumeIndex].womenImg}  />
         </div>
         <div className='ProductHeadImageSelectDiv'>
-          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} src={womenList[PerfumeIndex].image}  />
-          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} src={womenList[PerfumeIndex].womenImg}  />
+          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} alt='product' src={womenList[PerfumeIndex].image}  />
+          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} alt='product' src={womenList[PerfumeIndex].womenImg}  />
         </div>
         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'100%',marginTop:'10%'}}>
       <h3 style={{color:'wheat',margin:'0px'}}>
@@ -92,12 +92,12 @@ export default function ProductComponent() {
     {
       return <div className='ProductsDiv'>
       <div className='ProductHeadImageDiv'>
-          <img loading='lazy' style={{display:display1}} src={kidsList[PerfumeIndex].image}  />
-          <img loading='lazy' style={{display:display2}} src={kidsList[PerfumeIndex].womenImg}  />
+          <img loading='lazy' style={{display:display1}} alt='product' src={kidsList[PerfumeIndex].image}  />
+          <img loading='lazy' style={{display:display2}} alt='product' src={kidsList[PerfumeIndex].womenImg}  />
         </div>
         <div className='ProductHeadImageSelectDiv'>
-          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} src={kidsList[PerfumeIndex].image}  />
-          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} src={kidsList[PerfumeIndex].womenImg}  />
+          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} alt='product' src={kidsList[PerfumeIndex].image}  />
+          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} alt='product' src={kidsList[PerfumeIndex].womenImg}  />
         </div>
         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'100%',marginTop:'10%'}}>
       <h3 style={{color:'wheat',margin:'0px'}}>
@@ -123,12 +123,12 @@ export default function ProductComponent() {
       </h3>
       <h2 style={{color:'wheat',marginTop:'0px'}}>{unisexList[PerfumeIndex].real}</h2>
       <div className='ProductHeadImageDiv'>
-          <img loading='lazy' style={{display:display1}} src={unisexList[PerfumeIndex].image}  />
-          <img loading='lazy' style={{display:display2}} src={unisexList[PerfumeIndex].womenImg}  />
+          <img loading='lazy' style={{display:display1}} alt='product' src={unisexList[PerfumeIndex].image}  />
+          <img loading='lazy' style={{display:display2}} alt='product' src={unisexList[PerfumeIndex].womenImg}  />
         </div>
         <div className='ProductHeadImageSelectDiv'>
-          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} src={unisexList[PerfumeIndex].image}  />
-          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} src={unisexList[PerfumeIndex].womenImg}  />
+          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} alt='product' src={unisexList[PerfumeIndex].image}  />
+          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} alt='product' src={unisexList[PerfumeIndex].womenImg}  />
         </div>
         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'100%',marginTop:'10%'}}>
       <h3 style={{color:'wheat',margin:'0px'}}>
@@ -151,12 +151,12 @@ export default function ProductComponent() {
 
         <h2 style={{color:'wheat',marginTop:'0px'}}>{womenFrench[PerfumeIndex].real}</h2>
       <div className='ProductHeadImageDiv'>
-          <img loading='lazy' style={{display:display1}} src={womenFrench[PerfumeIndex].image}  />
-          <img loading='lazy' style={{display:display2}} src={womenFrench[PerfumeIndex].womenImg}  />
+          <img loading='lazy' style={{display:display1}} alt='product' src={womenFrench[PerfumeIndex].image}  />
+          <img loading='lazy' style={{display:display2}} alt='product' src={womenFrench[PerfumeIndex].womenImg}  />
         </div>
         <div className='ProductHeadImageSelectDiv'>
-          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} src={womenFrench[PerfumeIndex].image}  />
-          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} src={womenFrench[PerfumeIndex].womenImg}  />
+          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} alt='product' src={womenFrench[PerfumeIndex].image}  />
+          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} alt='product' src={womenFrench[PerfumeIndex].womenImg}  />
         </div>
         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'100%',marginTop:'10%'}}>
       <h3 style={{ color: 'wheat',margin:'0px' }}> {womenFrench[PerfumeIndex].price}₪</h3>
@@ -175,12 +175,12 @@ export default function ProductComponent() {
 
         <h2 style={{color:'wheat',marginTop:'0px'}}>{menFrench[PerfumeIndex].real}</h2>
       <div className='ProductHeadImageDiv'>
-          <img loading='lazy' style={{display:display1,backgroundColor:'white'}} src={menFrench[PerfumeIndex].image}  />
-          <img loading='lazy' style={{display:display2}} src={menFrench[PerfumeIndex].womenImg}  />
+          <img loading='lazy' alt='product' style={{display:display1,backgroundColor:'white'}} src={menFrench[PerfumeIndex].image}  />
+          <img loading='lazy' alt='product' style={{display:display2}} src={menFrench[PerfumeIndex].womenImg}  />
         </div>
         <div className='ProductHeadImageSelectDiv'>
-          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} src={menFrench[PerfumeIndex].image}  />
-          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} src={menFrench[PerfumeIndex].womenImg}  />
+          <img onClick={()=>{setDisplay1('flex');setDisplay2('none')}} alt='product' src={menFrench[PerfumeIndex].image}  />
+          <img onClick={()=>{setDisplay1('none');setDisplay2('flex')}} alt='product' src={menFrench[PerfumeIndex].womenImg}  />
         </div>
         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'100%',marginTop:'10%'}}>
 

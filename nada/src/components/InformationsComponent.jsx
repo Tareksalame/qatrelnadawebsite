@@ -136,7 +136,7 @@ export default function InformationsComponent() {
             <option value="الالتقاط من المتجر">الالتقاط من المتجر</option>
         </select>
         </label>
-        <button className='SendInformationsButton' onClick={informationsDone}>إرسال</button>
+        <button className='SendInformationsButton' onClick={informationsDone}>إرسال الطلبية</button>
     </div>
 </div>
   )

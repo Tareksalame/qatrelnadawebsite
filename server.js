@@ -199,7 +199,7 @@ function sendToTheCostumer(arr) {
                         <td style="padding: 10px;">${item.quantity}</td>
                         <td style="padding: 10px;">${item.product.replace}</td>
                         <td style="padding: 10px;">${item.product.real}</td>
-                        <td style="padding: 10px;"><img src="https://nada-532bf3415b41.herokuapp.com/${item.product.womenImg}" alt="Item" style="max-width: 60px;"></td>
+                        <td style="padding: 10px;"><img src="https://nada-532bf3415b41.herokuapp.com/${item.product.image}" alt="Item" style="max-width: 60px;"></td>
                         </tr>
                     </tbody>
             `;

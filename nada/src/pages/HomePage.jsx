@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Menu from '../components/Menu'
 import first from '../images/first.png'
 import altmen from '../images/altmen.png'
+import Footer from '../components/Footer'
 
 import { useNavigate } from 'react-router-dom'
 import userContext from '../userContext'
@@ -23,6 +24,7 @@ const nav= useNavigate()
         <br />
         <img onClick={()=>{setListName('menList');nav('/بديل رجالي')}} src={altmen} alt="first" />
         </div>
+        <Footer/>
     </div>
   )
 }

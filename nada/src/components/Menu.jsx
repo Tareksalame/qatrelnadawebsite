@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import userContext from '../userContext';
 import closeMenu from '../images/X.svg'
-import contactus from '../images/contactus.png'
 import logo from '../images/qatrelnada.svg'
+import contactus from '../images/contactus.png'
 import waze from '../images/waze.png'
 
 
@@ -124,13 +124,13 @@ export default function Menu() {
         <Link className='MenuLinks' onClick={()=>{setFlag(!flag);setShowMenu('none')}} to={'/الشموع'}>الشموع</Link>
         </div>
         <div style={{width:'100%',textAlign:'center'}} className='contactUsAndLocationMenuLinks'>
-        <a target='_blank' href='tel:0546564401' style={{width:'100%',display:'flex',flexDirection:'row-reverse',justifyContent:'center',alignItems:'center',textDecoration:'none'}}>
+        <a target='_blank' rel="noreferrer" href='tel:0546564401' style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textDecoration:'none'}}>
             <img src={contactus} width={'10%'} alt="contactus" />
             <h5>تواصل معنا</h5>
         </a>
-        <a target='_blank' href='https://www.waze.com/ar/live-map/directions?to=ll.32.40278%2C35.035422' style={{width:'100%',display:'flex',flexDirection:'row-reverse',justifyContent:'center',alignItems:'center',textDecoration:'none'}}>
+        <a target='_blank' rel="noreferrer" href='https://www.waze.com/ar/live-map/directions?to=ll.32.40278%2C35.035422' style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textDecoration:'none',marginTop:'3%'}}>
         <img src={waze} width={'10%'} alt="waze" />
-            <h5>الموقع</h5>
+            <h5>الوصول الينا</h5>
         </a>
         </div>
 
